@@ -1,25 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { Routes, Route } from'react-router-dom'
+import Login from './Components/Auth/Login'
+import Register from './Components/Auth/Register'
+import Home from './Components/Home'
+import MentorDetails from './Components/Mentors/MentorDetails'
+import MentorCategory from './Components/Mentors/MentorCategory'
+import Appointment from './Components/Appointment/Appointment'
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+       <Routes>
+        <Route path='/login' element={<Login />} />
+        <Route path='/register' element={<Register />} />
+        <Route path='/home' element={<Home/>} />
+        <Route path= 'mentor/users/:id' element={<MentorDetails />} />
+        <Route path='home/mentor/category' element={<MentorCategory />} />  
+        <Route path= 'home/mentor/appointment' element={<Appointment />} />
+      </Routes>
     </div>
-  );
+  )   
 }
 
-export default App;
+export default App
